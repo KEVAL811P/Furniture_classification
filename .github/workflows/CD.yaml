@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  cd:
+  Code Deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,7 +23,7 @@ jobs:
         run: |
           docker push ${{ secrets.DOCKER_USER }}/fc:${{ github.sha }}
           docker push ${{ secrets.DOCKER_USER }}/fc:latest
-      - name: executing remote ssh commands using password
+      - name: Deploy
         uses: appleboy/ssh-action@master
         with:
           host: 100.24.244.238

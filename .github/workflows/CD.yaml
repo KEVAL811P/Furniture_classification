@@ -24,10 +24,10 @@ jobs:
           docker push ${{ secrets.DOCKER_USER }}/fc:${{ github.sha }}
           docker push ${{ secrets.DOCKER_USER }}/fc:latest
       - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
-      with:
-        host: 100.24.244.238
-        username: root
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        script: |
-              bash /root/deploy.sh
+        uses: appleboy/ssh-action@master
+        with:
+          host: 100.24.244.238
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+                bash /root/deploy.sh

@@ -10,8 +10,8 @@ jobs:
     steps:  
     - uses: actions/checkout@v2
     - name: Install & Tests
-          run: |
-            pip install -r requirements.txt
+      run: |
+        pip install -r requirements.txt
 
   Test-Image:
     name: Testing Docker Image
@@ -19,5 +19,5 @@ jobs:
     steps:  
     - uses: actions/checkout@v2
     - name: Install & Tests
-          run: |
-            docker build -t model_testing .
+      run: |
+        docker build -t model_testing .

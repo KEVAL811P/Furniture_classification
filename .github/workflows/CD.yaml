@@ -31,4 +31,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
                 bash /root/deploy.sh
-                docker run -d --name fc -p  8080:8080 keval4444/fc:${{ github.sha }}
+                docker run -d --name fc -p  80:8080 keval4444/fc:${{ github.sha }}

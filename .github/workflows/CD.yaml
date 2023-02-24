@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  Code Deploy:
+  Code-Deploy:
     runs-on: ubuntu-latest
 
     steps:

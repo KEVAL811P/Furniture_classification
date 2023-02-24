@@ -1,0 +1,25 @@
+name: CI- Test
+
+on:
+  workflow_dispatch
+
+jobs:
+  Test-Code:
+    name: Testing Python Code
+    runs-on: ubuntu-latest
+    steps:  
+    - uses: actions/checkout@v2
+    - name: Install & Tests
+          run: |
+            pip install -r requirements.txt
+            python -m pytest
+
+  Test-Image:
+    name: Testing Docker Image
+    runs-on: ubuntu-latest
+    steps:  
+    - uses: actions/checkout@v2
+    - name: Install & Tests
+          run: |
+            docker build -t front .
+            docker run front

@@ -7,7 +7,7 @@ COPY requirements.txt  requirements.txt
 
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
-COPY app/main.py main.py 
+COPY main.py main.py 
 
 
 COPY run.sh run.sh
